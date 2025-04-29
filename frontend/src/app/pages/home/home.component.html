@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<section class="u-clearfix u-section-1" id="block-3">
+  <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+    <h4 class="u-align-center u-text u-text-default u-text-1">Product Categories</h4>
+    <div class="custom-expanded u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-none u-gallery-1">
+      <div class="u-gallery-inner u-gallery-inner-1">
+
+        <div class="u-border-2 u-border-grey-75 u-effect-hover-zoom u-gallery-item"
+             *ngFor="let category of Categories; let i = index">
+
+          <!-- 👇 Custom text block for name -->
+          <div class="category-name-overlay">{{ category.name }}</div>
+
+          <div class="u-back-slide">
+            <img
+              class="u-back-image u-expanded"
+              [src]="category.image"
+              [alt]="category.name"
+              (click)="showCategoryWiseProduct(category.name)"
+            />
+          </div>
+
+          <div class="u-over-slide u-shading" [ngClass]="'u-over-slide-' + (i + 1)"></div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="u-align-center u-clearfix u-section-2 image-overlay-section" id="block-2">
+  <div class="u-clearfix u-sheet u-sheet-1">
+
+    <h4 class="u-align-center u-text u-text-default u-text-1">Farmers</h4>
+    <p class="u-align-center u-text u-text-2">Meet our hardworking farmers</p>
+
+    <!-- Overlay Button -->
+    <div class="overlay-button-wrapper">
+      <button class="u-btn u-button-style overlay-button" (click)="goToFarmer()">Explore All Farmers</button>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="custom-expanded u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1 gallery-container">
+      <div class="u-gallery-inner u-gallery-inner-1">
+        <div
+          *ngFor="let farmer of farmersForHomePage; let i = index"
+          class="u-effect-fade u-gallery-item"
+        >
+          <div class="u-back-slide">
+            <img
+              class="u-back-image u-expanded"
+              [src]="farmer.imageUrl"
+              [attr.data-image-width]="3500"
+              [attr.data-image-height]="2333"
+              alt="Farmer Image"
+            />
+          </div>
+          <div class="u-over-slide u-shading" [ngClass]="'u-over-slide-' + (i + 1)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="footer"><div class="u-clearfix u-sheet u-sheet-1">
+  <p class="u-small-text u-text u-text-variant u-text-1">Farm Fresh Shop</p>
+</div></footer>
+

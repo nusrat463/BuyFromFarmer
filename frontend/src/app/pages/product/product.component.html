@@ -1,0 +1,36 @@
+<div class="page-wrapper">
+  <app-navbar></app-navbar>
+
+  <section class="product-section" id="block-4">
+    <div class="container">
+      <div class="search-wrapper">
+        <input
+          type="text"
+          placeholder="Search products..."
+          [(ngModel)]="searchTerm"
+          (input)="onSearch()"
+          class="search-input"
+        />
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card" *ngFor="let product of Products">
+          <div class="product-image">
+            <img [src]="product.image" [alt]="product.name" />
+          </div>
+          <div class="product-info">
+            <h6 class="product-name">{{ product.name }}</h6>
+            <p class="product-price">{{ product.price }} Tk/ {{ product.unit }}</p>
+            <button class="btn-cart" (click)="addToCart(product)">🛒 Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>Farm Fresh Shop</p>
+    </div>
+  </footer>
+</div>

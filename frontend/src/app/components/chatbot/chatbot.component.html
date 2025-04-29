@@ -1,0 +1,24 @@
+<!-- Floating bubble button -->
+<div class="chatbot-bubble" (click)="toggleChat()">
+  💬
+</div>
+
+<!-- Chat window (only if visible) -->
+<div class="chat-window" *ngIf="showChatWindow">
+  <div class="chat-header">
+    Chat Support
+    <span (click)="toggleChat()" class="close-btn">×</span>
+  </div>
+
+  <div class="chat-messages" #chatMessages>
+    <div *ngFor="let message of messages">
+      <div [ngClass]="message.sender" [innerHTML]="formatReply(message.text)"></div>
+    </div>
+  </div>
+
+
+  <form (ngSubmit)="sendMessage()" class="chat-form">
+    <input type="text" [(ngModel)]="userInput" name="message" placeholder="Type a message..." required />
+    <button type="submit">Send</button>
+  </form>
+</div>

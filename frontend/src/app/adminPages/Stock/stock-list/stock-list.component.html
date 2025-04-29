@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+  <h3 class="text-center mb-4">Stock List</h3>
+  <div class="text-end mb-3">
+    <button class="btn btn-success me-2" routerLink="/order-stock">
+      Order
+    </button>
+    <button class="btn btn-success" routerLink="/add-stock">
+      + Add
+    </button>
+  </div>
+  <table class="table table-bordered table-hover">
+    <thead class="table-light">
+    <tr>
+      <th>#</th>
+      <th>Product</th>
+      <th>Farmer</th>
+      <th>Quantity</th>
+      <th class="text-center">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let stock of stocks; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ stock.product.name }}</td>
+      <td>{{ stock.farmer.name }}</td>
+      <td [ngClass]="{ 'low-quantity': stock.quantity < 10 }">
+        {{ stock.quantity }}{{ stock.product.unit }}
+      </td>
+      <td class="text-center">
+        <button class="btn btn-sm btn-warning me-2" (click)="editProduct(stock.id)">Edit</button>
+        <button class="btn btn-sm btn-danger" >Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

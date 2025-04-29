@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<div class="cart-wrapper">
+  <h4 class="cart-title">🛒 Your Cart</h4>
+
+  <table *ngIf="cart.length > 0" class="cart-table">
+    <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Price (Tk)</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of cart; let i = index">
+      <td><img [src]="item.image" alt="{{ item.name }}" width="70" /></td>
+      <td>
+        {{ item.productName }}
+        <span class="text-muted">({{ item.quantity }}x)</span>
+      </td>
+      <td>{{ item.price * item.quantity }} Tk</td>
+      <td>
+        <button (click)="decrementQuantity(item)" class="btn btn-secondary">-</button>
+        <button (click)="incrementQuantity(item)" class="btn btn-secondary">+</button>
+        <button (click)="removeItem(item.productId)" class="btn btn-danger">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="cart-summary" *ngIf="cart.length > 0">
+    <h6>Total: {{ total }} Tk</h6>
+    <button class="btn-checkout" routerLink="/checkout">Checkout</button>
+  </div>
+
+  <p *ngIf="cart.length === 0" class="empty-msg">Your cart is empty.</p>
+</div>

@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+<form [formGroup]="stockForm" class="stock-form">
+  <h3 class="text-center mb-4">Order Stock</h3>
+  <div formArrayName="stockRows">
+    <div *ngFor="let row of stockRows.controls; let i = index" [formGroupName]="i" class="stock-row">
+
+      <app-custom-searchable-dropdown
+        [options]="products"
+        displayKey="name"
+        (selectedOption)="onProductSelect($event, i)"
+        [placeholder]="'Select or Search Product'"
+        class="dropdown">
+      </app-custom-searchable-dropdown>
+
+      <app-custom-searchable-dropdown
+        [options]="farmers"
+        displayKey="name"
+        (selectedOption)="onFarmerSelect($event, i)"
+        [placeholder]="'Select or Search Farmer'"
+        class="dropdown"
+      >
+      </app-custom-searchable-dropdown>
+
+      <input
+        formControlName="quantity"
+        type="number"
+        placeholder="Quantity"
+        class="input-field">
+
+      <select formControlName="unit" class="input-field">
+        <option value="" disabled selected>Select Unit</option>
+        <option *ngFor="let unit of units" [value]="unit">{{ unit }}</option>
+      </select>
+
+      <button
+        type="button"
+        (click)="removeRow(i)"
+        class="btn btn-remove">
+        Remove
+      </button>
+
+    </div>
+  </div>
+
+  <div class="button-group">
+    <button type="button" (click)="addRow()" class="btn btn-add">
+      + Add More
+    </button>
+    <div>
+      <button type="button" class="btn btn-secondary me-2" (click)="goBack()">Back</button>
+      <button type="submit" (click)="orderStock()" class="btn btn-save">Order</button>
+    </div>
+
+  </div>
+</form>

@@ -1,0 +1,16 @@
+.form-shadow {
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+button.btn-success {
+  background-color: #34ce57;
+  border-color: #34ce57;
+}
+
+button.btn-success:hover {
+  background-color: #2fb34c;
+}

@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+
+<div class="checkout-container">
+  <h4>Checkout</h4>
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <!-- Customer Details -->
+    <div class="form-section">
+      <label>Full Name</label>
+      <input formControlName="username" type="text" placeholder="John Doe" />
+
+      <label>Email</label>
+      <input formControlName="email" type="email" placeholder="you@example.com" />
+
+      <label>Phone</label>
+      <input formControlName="phone" type="text" placeholder="123-456-7890" />
+    </div>
+
+    <!-- Address -->
+    <div class="form-section">
+      <label>Shipping Address</label>
+      <input formControlName="shippingAddress" type="text" />
+    </div>
+
+    <div class="form-section order-summary">
+      <h4>Order Summary</h4>
+      <ul class="summary-list">
+        <li *ngFor="let item of cartItems">
+          {{ item.productName }} × {{ item.quantity }} — {{ item.price * item.quantity}}Tk
+        </li>
+
+      </ul>
+      <div class="total-row">
+        <strong>Total:</strong>
+        <strong>{{ totalPrice}}Tk</strong>
+      </div>
+    </div>
+
+
+    <!-- Payment Method -->
+    <div class="form-section">
+      <h6>Payment Method</h6>
+      <label>
+        <input type="radio" formControlName="paymentMethod" value="cash" />
+        Cash on Delivery
+      </label>
+      <label>
+        <input type="radio" formControlName="paymentMethod" value="card" />
+        Pay with Card
+      </label>
+    </div>
+
+    <!-- Stripe Card Element -->
+    <div *ngIf="checkoutForm.value.paymentMethod === 'card'" class="form-section">
+      <label>Card Details</label>
+      <div id="card-element" class="stripe-input"></div>
+      <div id="card-errors" role="alert" class="error-message"></div>
+    </div>
+
+    <button type="submit" [disabled]="checkoutForm.invalid">
+      Complete Order
+    </button>
+  </form>
+</div>

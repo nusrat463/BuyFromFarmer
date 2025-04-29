@@ -1,0 +1,19 @@
+<div class="dropdown-container" #dropdownContainer>
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="onSearchChange()"
+    (click)="toggleDropdown()"
+    [placeholder]="placeholder"
+    class="search-input"
+  />
+
+  <ul *ngIf="isDropdownOpen" class="dropdown-list">
+    <li
+      *ngFor="let option of filteredOptions"
+      (click)="selectOption(option)"
+      class="dropdown-item">
+      {{ option[displayKey] }}
+    </li>
+  </ul>
+</div>

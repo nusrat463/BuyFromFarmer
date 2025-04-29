@@ -1,0 +1,116 @@
+<app-navbar></app-navbar>
+<section class="u-align-center u-clearfix u-container-align-center u-custom-typography u-section-1" id="sec-4476">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <h4 class="u-align-center u-text u-text-default u-text-1">Our Farmer</h4>
+    <p class="u-align-center u-text u-text-2">
+      Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.
+    </p>
+
+    <div class="u-expanded-width u-list u-list-1">
+      <div class="u-repeater u-repeater-1" style="display: flex; flex-wrap: wrap; gap: 30px 40px; justify-content: center;">
+      <div
+          class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item" style="width: 300px"
+          *ngFor="let farmer of farmers"
+        >
+          <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs">
+            <img
+              [src]="farmer.imageUrl"
+              [alt]="farmer.name"
+              (error)="farmer.imageUrl = 'assets/template/images/default.jpg'"
+              class="u-expanded-width u-image u-image-round u-radius-50 farmer-image"
+            />
+            <h5 class="u-text">{{ farmer.name }}</h5>
+            <p class="u-text">{{ farmer.category }}</p>
+            <a
+              (click)="openPopup(farmer)"
+              data-bs-toggle="modal"
+              data-bs-target="#farmerModal"
+              class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-2-base u-none u-radius u-text-body-color u-text-hover-white"
+              style="margin-left: 90px; cursor: pointer;"
+            >Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="farmerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedFarmer?.name }}</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Address:</strong> {{ selectedFarmer?.address }}</p>
+        <p><strong>Phone:</strong> {{ selectedFarmer?.phoneNo || 'Not Available' }}</p>
+        <p>Reach out to the farmer for delivery or pickup details.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="footer"><div class="u-clearfix u-sheet u-sheet-1">
+  <p class="u-small-text u-text u-text-variant u-text-1">Farm Fresh Shop</p>
+</div></footer>
+<section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-dialog-section-5" id="popup-287c">
+  <div class="u-container-style u-dialog u-white u-dialog-1">
+    <div class="u-container-layout u-container-layout-1">
+      <p class="u-align-center u-text u-text-default u-text-1">Adriana Scold Lives in<br><span style="font-weight: 700;">Khulna</span>
+        <br>Contact No: <span style="font-weight: 700;">01789098789</span>
+        <br>You can call him ask for the available products and go can pick up by yourself or he can deliver to you.
+      </p>
+    </div>
+    <button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
+  </div>
+</section><style>.u-dialog-section-5 .u-dialog-1 {
+  width: 800px;
+  height: auto;
+  min-height: 212px;
+  margin: 294px auto 60px;
+}
+
+.u-dialog-section-5 .u-container-layout-1 {
+  padding: 30px;
+}
+
+.u-dialog-section-5 .u-text-1 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.u-dialog-section-5 .u-icon-1 {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 991px) {
+  .u-dialog-section-5 .u-dialog-1 {
+    width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-dialog-section-5 .u-dialog-1 {
+    width: 540px;
+  }
+
+  .u-dialog-section-5 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-dialog-section-5 .u-dialog-1 {
+    width: 340px;
+  }
+}</style>

@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="form-container">
+    <h2 class="text-center mb-4">Login</h2>
+    <form (ngSubmit)="login()">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" [(ngModel)]="credentials.username" name="username" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" [(ngModel)]="credentials.password" name="password" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <h4 class="mt-3 text-center small-text">Don't have an account? <a class="small-text1" routerLink="/register">Register here</a></h4><div class="or-section text-center my-3">
+    <span class="or-text">OR</span>
+  </div>
+    <button type="button" class="btn google-login w-100" (click)="googleLogin()">
+      <i class="bi bi-google me-2"></i> Login with Google
+    </button>
+  </div>
+</div>
+

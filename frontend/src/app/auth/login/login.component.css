@@ -1,0 +1,71 @@
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  border: 1px solid #34ce57; /* Light border for fallback */
+}
+
+.form-container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.small-text {
+  font-size: 0.85rem;
+}
+
+.small-text1 {
+  font-size: 0.85rem;
+  color: #34ce57;
+}
+
+.btn-primary {
+  background-color: #34ce57 !important;
+  border-color: #34ce57 !important;
+  color: #fff;
+}
+
+.or-section {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.or-text {
+  background-color: white; /* Background color of the 'OR' text */
+  padding: 0 10px; /* Padding around the text */
+  color: black; /* Text color */
+  font-size: 14px; /* Adjust size as needed */
+  position: relative;
+  z-index: 1;
+}
+
+.or-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: gray; /* Line color */
+  z-index: 0;
+}
+
+.google-login {
+  border: 1.5px solid #34ce57; /* Green border */
+  background-color: transparent; /* No background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-login:hover {
+  background-color: #f0f0f0; /* Optional: add a light background color on hover */
+}

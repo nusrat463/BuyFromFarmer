@@ -1,0 +1,50 @@
+
+.error-text small {
+  color: red;
+  font-size: 0.875em;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.input-error {
+  animation: shake 0.5s ease-in-out;
+}
+
+ .form-container {
+   width: 100%;
+   max-width: 400px;
+   background-color: #ffffff;
+   padding: 30px;
+   border-radius: 10px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+   border: 1px solid #34ce57; /* Light border for fallback */
+ }
+
+.form-container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.small-text {
+  font-size: 0.85rem;
+}
+
+.small-text1 {
+  font-size: 0.85rem;
+  color: #34ce57;
+}
+
+.btn-primary {
+  background-color: #34ce57 !important;
+  border-color: #34ce57 !important;
+  color: #fff;
+}
+
+
+

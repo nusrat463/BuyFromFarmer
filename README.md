@@ -1,32 +1,37 @@
-<<<<<<< HEAD
-# FarmFreshShop
+# 🛒🌾 BuyFromFarmer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+**BuyFromFarmer** is an eCommerce platform that connects customers directly with farmers. It enables seamless product browsing, cart management, order placement, and real-time **inventory tracking and management**. The system also features an AI-powered chatbot for natural language queries and integrates with Cloudinary for image storage. Admins receive low-stock alerts and can notify farmers via SMS using Twilio.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🔧 Tech Stack
 
-## Code scaffolding
+* **Frontend:** Angular, Bootstrap
+* **Backend:** Spring Boot (Java)
+* **Database:** MySQL
+* **Chatbot:** Stanford CoreNLP (NER & Intent Detection)
+* **Image Storage:** Cloudinary
+* **Authentication:** Spring Security
+* **SMS Notifications:** Twilio
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🚀 Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* ✅ Browse and search for fresh produce
+* 🛒 Add items to cart and place orders
+* 📦 Inventory tracking and automated stock management
+* 🧾 Admin product and farmer management
+* 🤖 AI-powered chatbot for natural queries
+* ☁️ Cloud-based image upload and storage
+* 📲 SMS notifications for restock requests
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📦 Inventory Management
 
-## Running end-to-end tests
+* **Manual Stock Control:** Admins can update stock levels for each product.
+* **Scheduled Checks:** A background job runs daily to monitor inventory.
+* **Low Stock Alerts:** If a product falls below a threshold, the system alerts the admin.
+* **Farmer Notifications via Twilio:** Admins can send SMS messages to farmers using Twilio to request restocking of low-inventory items.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# BuyFromFarmer 
-is a platform to buy products directly from farmers. This platform will help to cut off middle party between farmer and customer. 
->>>>>>> a2ecb529db34d18746085031b56695c9099d162a

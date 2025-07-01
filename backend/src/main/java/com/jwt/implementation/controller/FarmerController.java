@@ -22,6 +22,11 @@ public class FarmerController{
     @Autowired
     private FarmerRepository farmerRepository;
 
+  @Autowired
+  public FarmerController(FarmerRepository farmerRepository) {
+    this.farmerRepository = farmerRepository;
+  }
+
     //     CREATE A NEW Farmer
 
     @RequestMapping(value = "/farmer",
@@ -61,9 +66,10 @@ public class FarmerController{
             produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
     @ResponseBody
     public ResponseEntity<?> getProductById(@PathVariable("id") Long id) {
-        return Optional.ofNullable(farmerRepository.findById(id))
-                .map(farmer -> new ResponseEntity<>(farmer, HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+      return farmerRepository.findById(id)
+        .map(farmer -> new ResponseEntity<>(farmer, HttpStatus.OK))
+        .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+
     }
 
     @RequestMapping(value = "/farmer/getAllFarmer",

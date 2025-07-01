@@ -1,7 +1,10 @@
 package com.jwt.implementation.model;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.Set;
 
+@ToString
 @Entity
 @Table(name = "farmers")
 public class Farmer {

@@ -13,6 +13,7 @@
 * **Image Storage:** Cloudinary
 * **Authentication:** Spring Security
 * **SMS Notifications:** Twilio
+* **Payments**: Stripe
 
 ---
 
@@ -20,6 +21,7 @@
 
 * ✅ Browse and search for fresh produce
 * 🛒 Add items to cart and place orders
+* 💳 Secure online payments via Stripe
 * 📦 Inventory tracking and automated stock management
 * 🧾 Admin product and farmer management
 * 🤖 AI-powered chatbot for natural queries
